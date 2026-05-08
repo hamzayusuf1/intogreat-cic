@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About Us"
+  description="Intogreat Housing CIC is a Birmingham-based Community Interest Company. We help vulnerable people, including asylum seekers granted leave to remain, find safe housing across Birmingham."
+>
+
+  <!-- Page hero -->
+  <section class="bg-warm-cream py-16 lg:py-20">
+    <div class="section-container">
+      <div class="max-w-2xl">
+        <p class="text-periwinkle font-semibold text-sm uppercase tracking-widest mb-3">About Us</p>
+        <h1 class="font-bold text-4xl sm:text-5xl text-charcoal leading-tight mb-5" style="font-family: 'Montserrat', sans-serif;">
+          Who We Are
+        </h1>
+        <p class="text-muted text-xl leading-relaxed">
+          A Birmingham-based Community Interest Company. We help people find safe housing and try to make the process as easy as possible for the organisations referring to us.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who we are -->
+  <section class="bg-white py-16 lg:py-20">
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div>
+          <p class="text-periwinkle font-semibold text-sm uppercase tracking-widest mb-3">Our Story</p>
+          <h2 class="section-heading mb-6">Why we exist</h2>
+          <div class="space-y-5 text-muted leading-relaxed">
+            <p>
+              Intogreat Housing and Support Services CIC was set up to solve a specific problem. People who urgently need housing. Housing providers with rooms available. No reliable way to connect the two.
+            </p>
+            <p>
+              Our main focus is asylum seekers who have been granted leave to remain. When that status arrives, they typically have a very short window to leave their asylum accommodation and find somewhere to live on their own, often without a rental history, a guarantor, or much understanding of how the benefits system works.
+            </p>
+            <p>
+              We connect those people with housing providers who understand their situation and have rooms in supported accommodation. We also help others facing housing insecurity across Birmingham.
+            </p>
+          </div>
+        </div>
+
+        <!-- Values -->
+        <div class="space-y-5">
+          {[
+            {
+              title: 'People before profit',
+              body: 'We are a Community Interest Company. Any surplus goes back into helping more people find homes. This is not a business built around profit.',
+            },
+            {
+              title: 'Quality over quantity',
+              body: 'We would rather make fewer, better placements than rush referrals through. Every placement we make is one we stand behind.',
+            },
+            {
+              title: 'Long-term stability',
+              body: 'We check back after every placement to make sure it is actually working. Getting someone housed is only the start.',
+            },
+          ].map((value) => (
+            <div class="flex items-start gap-4 p-6 bg-warm-cream rounded-2xl">
+              <div class="w-8 h-8 bg-periwinkle/15 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-periwinkle" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-charcoal mb-1.5" style="font-family: 'Montserrat', sans-serif;">{value.title}</h3>
+                <p class="text-muted text-sm leading-relaxed">{value.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What drives us -->
+  <section class="bg-periwinkle-light py-16 lg:py-20">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-periwinkle font-semibold text-sm uppercase tracking-widest mb-3">What Drives Us</p>
+        <h2 class="section-heading mb-5">The moment leave to remain arrives</h2>
+        <p class="text-muted text-lg leading-relaxed">
+          Understanding why this work matters starts with understanding what this moment actually feels like for the people going through it.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 lg:p-12 max-w-3xl mx-auto shadow-sm">
+        <div class="space-y-5 text-muted leading-relaxed text-lg">
+          <p>
+            When someone is granted leave to remain, it is a relief. It is also the start of a 28-day countdown. They have to leave their asylum accommodation and find somewhere to live on their own.
+          </p>
+          <p>
+            Most have no UK rental history, no guarantor, and limited English. Most private landlords won't touch it. The housing system is hard to get through even for people who have been in it for years.
+          </p>
+          <p>
+            We connect these people with housing providers who know this situation and have rooms in supported accommodation.
+          </p>
+          <p class="font-medium text-charcoal">
+            We coordinate the placement, stay in contact with both sides, and check back afterwards to make sure it is working.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our approach -->
+  <section class="bg-white py-16 lg:py-20">
+    <div class="section-container">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="text-periwinkle font-semibold text-sm uppercase tracking-widest mb-3">Our Approach</p>
+        <h2 class="section-heading">How we work</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {[
+          {
+            title: 'We vet every provider',
+            body: 'Before adding a housing provider to our network, we assess their properties, standards, and track record. We only refer to providers we trust.',
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`,
+          },
+          {
+            title: 'We coordinate placements',
+            body: 'We work with the referring organisation and the housing provider to get the move done. You tell us what you know, we handle the rest.',
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />`,
+          },
+          {
+            title: 'We follow up',
+            body: 'After move-in, we check in to make sure the placement is actually working. Our name is attached to every referral we make.',
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />`,
+          },
+        ].map((item) => (
+          <div class="bg-warm-cream rounded-2xl p-7 text-center">
+            <div class="w-14 h-14 bg-periwinkle/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-periwinkle" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon}></svg>
+            </div>
+            <h3 class="font-bold text-charcoal mb-3" style="font-family: 'Montserrat', sans-serif;">{item.title}</h3>
+            <p class="text-muted text-sm leading-relaxed">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Connected to IGH -->
+  <section class="bg-warm-cream py-14 lg:py-16">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-start gap-5 p-8 bg-white rounded-2xl shadow-sm">
+          <div class="w-12 h-12 bg-periwinkle/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-periwinkle" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-charcoal text-lg mb-2" style="font-family: 'Montserrat', sans-serif;">Part of the Intogreat Housing family</h3>
+            <p class="text-muted leading-relaxed">
+              We are the social enterprise arm of Intogreat Housing, a Birmingham-based housing provider with real operational experience in supported accommodation. That gives us a clear picture of what good housing looks like, and we hold our providers to the same standard.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team photo placeholder -->
+  <section class="bg-white py-16 lg:py-20">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-periwinkle font-semibold text-sm uppercase tracking-widest mb-3">Our Team</p>
+        <h2 class="section-heading mb-6">The people behind the work</h2>
+
+        <!-- Photo placeholder -->
+        <div class="w-full rounded-2xl bg-warm-cream border-2 border-dashed border-gray-200 flex flex-col items-center justify-center py-20 mb-6">
+          <div class="w-16 h-16 bg-periwinkle/10 rounded-full flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-periwinkle/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <p class="text-muted/50 text-sm">Team or founder photo — add your image here</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-periwinkle py-14">
+    <div class="section-container text-center">
+      <h2 class="text-white font-bold text-2xl sm:text-3xl mb-4" style="font-family: 'Montserrat', sans-serif;">
+        Ready to make a referral?
+      </h2>
+      <p class="text-white/80 text-lg mb-8 max-w-lg mx-auto">
+        If you have a client who needs housing, we'd love to hear from you. We respond within 24 hours.
+      </p>
+      <a href="/refer" class="inline-flex items-center justify-center gap-2 bg-white text-periwinkle font-semibold px-8 py-4 rounded-xl hover:bg-warm-cream transition-colors duration-200 text-base">
+        Make a Referral
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

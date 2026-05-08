@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import WhoWeHelp from '../components/sections/WhoWeHelp.astro';
+import HowItWorksHome from '../components/sections/HowItWorksHome.astro';
+import ImpactSection from '../components/sections/ImpactSection.astro';
+import TrustBadges from '../components/sections/TrustBadges.astro';
+---
+
+<BaseLayout
+  title="Home"
+  description="Intogreat Housing CIC connects vulnerable individuals — including asylum seekers granted leave to remain — with safe, quality housing across Birmingham. Refer a client today."
+>
+  <Hero />
+  <WhoWeHelp />
+  <HowItWorksHome />
+  <ImpactSection />
+  <TrustBadges />
+
+  <!-- Bottom CTA strip -->
+  <section class="bg-periwinkle py-14">
+    <div class="section-container text-center">
+      <h2 class="text-white font-bold text-2xl sm:text-3xl mb-4" style="font-family: 'Montserrat', sans-serif;">
+        Have a client who needs housing?
+      </h2>
+      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+        We respond within 24 hours and work quickly when urgency demands it. Making a referral takes minutes.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/refer" class="inline-flex items-center justify-center gap-2 bg-white text-periwinkle font-semibold px-8 py-4 rounded-xl hover:bg-warm-cream transition-colors duration-200 shadow-sm text-base">
+          Make a Referral
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+        <a href="/contact" class="btn-outline-white text-base px-8 py-4">
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

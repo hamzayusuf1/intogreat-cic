@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-charcoal: #333333;
+  --color-charcoal-light: #4a4a4a;
+  --color-periwinkle: #7B8FDB;
+  --color-periwinkle-dark: #5A71C4;
+  --color-periwinkle-light: #EEF1FB;
+  --color-warm-white: #FDFCFB;
+  --color-warm-cream: #F7F4F0;
+  --color-muted: #666666;
+
+  --font-montserrat: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-inter: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    color: #333333;
+    background-color: #FDFCFB;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-periwinkle text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-periwinkle-dark transition-colors duration-200 shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 text-charcoal font-semibold px-7 py-3.5 rounded-xl border-2 border-charcoal/20 hover:border-periwinkle hover:text-periwinkle transition-colors duration-200;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-heading {
+    @apply font-bold text-3xl sm:text-4xl text-charcoal;
+    font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .form-label {
+    @apply block text-sm font-semibold text-charcoal mb-2;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-xl text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-periwinkle/30 focus:border-periwinkle transition-colors duration-200 bg-white;
+  }
+
+  .form-select {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-xl text-charcoal focus:outline-none focus:ring-2 focus:ring-periwinkle/30 focus:border-periwinkle transition-colors duration-200 bg-white cursor-pointer;
+  }
+
+  .form-textarea {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-xl text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-periwinkle/30 focus:border-periwinkle transition-colors duration-200 bg-white resize-none;
+  }
+}

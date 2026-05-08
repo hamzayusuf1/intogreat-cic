@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const steps = [
+  {
+    number: '01',
+    title: 'Contact us',
+    body: 'Call, email, or fill in the referral form on this website. There is no complex process. Just get in touch.',
+  },
+  {
+    number: '02',
+    title: 'Tell us about the individual',
+    body: "Tell us what you know about the person's situation: their housing needs, immigration status, any support requirements, urgency, and any preference on area. The more you can share, the better the match.",
+  },
+  {
+    number: '03',
+    title: 'We identify a suitable placement',
+    body: "We look across our network of vetted providers to find a property that fits. We don't rush this. A good match matters more than a quick one.",
+  },
+  {
+    number: '04',
+    title: 'We coordinate the move-in',
+    body: 'We work with the housing provider and, where it helps, with you and the person directly to get the move done. We handle the coordination so you can focus on your client.',
+  },
+  {
+    number: '05',
+    title: 'We follow up',
+    body: 'After move-in, we check in with the person and the provider. If there is a problem, we would rather know early. Placements that last matter more to us than placements that look good on paper.',
+  },
+];
+
+const infoNeeded = [
+  "The individual's name and contact details (if available)",
+  "Their current immigration status (e.g. granted leave to remain, no recourse to public funds, etc.)",
+  'Any support needs or vulnerabilities we should be aware of',
+  'Their preferred area of Birmingham (if they have one)',
+  'How urgent it is and how quickly they need to move',
+  'Your name, organisation, and contact details',
+  'Any other relevant context',
+];
+---
+
+<BaseLayout
+  title="How It Works"
+  description="A simple 5-step process for charities, social workers, and support organisations to refer individuals who need housing in Birmingham. We respond within 24 hours."
+>
+
+  <!-- Page hero -->
+  <section class="bg-warm-cream py-16 lg:py-20">
+    <div class="section-container">
+      <div class="max-w-2xl">
+        <p class="text-periwinkle font-semibold text-sm uppercase tracking-widest mb-3">How It Works</p>
+        <h1 class="font-bold text-4xl sm:text-5xl text-charcoal leading-tight mb-5" style="font-family: 'Montserrat', sans-serif;">
+          Simple. Clear. Effective.
+        </h1>
+        <p class="text-muted text-xl leading-relaxed">
+          Whether you're a charity, a social worker, or a local authority housing team, the referral process is straightforward.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- For referral partners: steps -->
+  <section class="bg-white py-16 lg:py-24">
+    <div class="section-container">
+      <div class="max-w-2xl mb-14">
+        <p class="text-periwinkle font-semibold text-sm uppercase tracking-widest mb-3">For Referral Partners</p>
+        <h2 class="section-heading mb-4">How to refer someone to us</h2>
+        <p class="text-muted text-lg leading-relaxed">
+          If you're working with someone who needs housing in Birmingham, here is exactly what happens when you contact us.
+        </p>
+      </div>
+
+      <!-- Steps -->
+      <div class="relative">
+        <!-- Vertical line -->
+        <div class="absolute left-7 top-0 bottom-0 w-px bg-gray-100 hidden md:block" aria-hidden="true"></div>
+
+        <div class="space-y-8">
+          {steps.map((step) => (
+            <div class="flex items-start gap-6 md:gap-8">
+              <!-- Step number -->
+              <div class="w-14 h-14 bg-periwinkle rounded-2xl flex items-center justify-center flex-shrink-0 relative z-10">
+                <span class="text-white font-bold text-sm" style="font-family: 'Montserrat', sans-serif;">{step.number}</span>
+              </div>
+              <!-- Content -->
+              <div class="flex-1 bg-warm-cream rounded-2xl p-7">
+                <h3 class="font-bold text-charcoal text-xl mb-3" style="font-family: 'Montserrat', sans-serif;">{step.title}</h3>
+                <p class="text-muted leading-relaxed">{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- CTA after steps -->
+      <div class="mt-12">
+        <a href="/refer" class="btn-primary text-base">
+          Make a referral now
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we need from you -->
+  <section class="bg-periwinkle-light py-16 lg:py-20">
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <p class="text-periwinkle font-semibold text-sm uppercase tracking-widest mb-3">What Helps Us Help You</p>
+          <h2 class="section-heading mb-5">What to have ready</h2>
+          <p class="text-muted text-lg leading-relaxed mb-6">
+            The more you can tell us about the person's situation, the faster we can find a good match. If you don't have everything, don't worry. We will work with what you have and ask follow-up questions.
+          </p>
+          <a href="/refer" class="btn-primary text-base">
+            Go to the referral form
+          </a>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <h3 class="font-bold text-charcoal mb-6" style="font-family: 'Montserrat', sans-serif;">Useful information to include</h3>
+          <ul class="space-y-4">
+            {infoNeeded.map((item) => (
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-periwinkle/15 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-periwinkle" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <p class="text-muted text-sm leading-relaxed">{item}</p>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-6 text-xs text-muted/70 border-t border-gray-100 pt-4">
+            All referral information is handled confidentially in line with data protection requirements.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- For housing providers -->
+  <section class="bg-white py-16 lg:py-20">
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-periwinkle font-semibold text-sm uppercase tracking-widest mb-3">For Housing Providers</p>
+          <h2 class="section-heading mb-5">Looking to work with us?</h2>
+          <div class="space-y-4 text-muted leading-relaxed mb-8">
+            <p>
+              If you're a housing provider with available rooms in supported accommodation in Birmingham, we'd like to work with you.
+            </p>
+            <p>
+              We send vetted referrals: people we have assessed, with relevant information about their needs shared beforehand. That means fewer void periods and tenancies that are more likely to last.
+            </p>
+            <p>
+              We only work with providers who meet our standards. If you are confident in the quality of your accommodation, get in touch and we can talk about what working together would look like.
+            </p>
+          </div>
+          <a href="/contact" class="btn-primary text-base">
+            Partner with us
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {[
+            { title: 'Vetted referrals', body: 'We only refer people we think are a good fit for your property.' },
+            { title: 'Reduced void periods', body: 'A steady stream of referrals means less time with empty rooms and lost income.' },
+            { title: 'Pre-shared information', body: "We give you what you need to know about a prospective tenant before you commit." },
+            { title: 'Ongoing support', body: 'We remain a point of contact after placement in case issues arise.' },
+          ].map((item) => (
+            <div class="bg-warm-cream rounded-xl p-6">
+              <h3 class="font-bold text-charcoal text-base mb-2" style="font-family: 'Montserrat', sans-serif;">{item.title}</h3>
+              <p class="text-muted text-sm leading-relaxed">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
