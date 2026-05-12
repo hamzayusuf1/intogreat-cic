@@ -1,42 +1,157 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/sections/Hero.astro';
-import WhoWeHelp from '../components/sections/WhoWeHelp.astro';
-import HowItWorksHome from '../components/sections/HowItWorksHome.astro';
-import ImpactSection from '../components/sections/ImpactSection.astro';
-import TrustBadges from '../components/sections/TrustBadges.astro';
 ---
 
 <BaseLayout
   title="Home"
-  description="Intogreat Housing CIC connects vulnerable individuals — including asylum seekers granted leave to remain — with safe, quality housing across Birmingham. Refer a client today."
+  description="We help people who have been through the asylum system find stable housing and the support they need to begin building their lives here."
 >
-  <Hero />
-  <WhoWeHelp />
-  <HowItWorksHome />
-  <ImpactSection />
-  <TrustBadges />
 
-  <!-- Bottom CTA strip -->
-  <section class="bg-periwinkle py-14">
-    <div class="section-container text-center">
-      <h2 class="text-white font-bold text-2xl sm:text-3xl mb-4" style="font-family: 'Montserrat', sans-serif;">
-        Have a client who needs housing?
-      </h2>
-      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-        We respond within 24 hours and work quickly when urgency demands it. Making a referral takes minutes.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/refer" class="inline-flex items-center justify-center gap-2 bg-white text-periwinkle font-semibold px-8 py-4 rounded-xl hover:bg-warm-cream transition-colors duration-200 shadow-sm text-base">
-          Make a Referral
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-        </a>
-        <a href="/contact" class="btn-outline-white text-base px-8 py-4">
-          Get in touch
-        </a>
+  <!-- Hero: split layout -->
+  <section class="grid grid-cols-1 lg:grid-cols-5" style="min-height: clamp(420px, 52vw, 600px)">
+    <div class="lg:col-span-3 relative h-64 lg:h-auto overflow-hidden">
+      <img
+        src="/images/hero-birmingham.jpg"
+        alt="Birmingham city centre"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-slate/20 to-transparent hidden lg:block"></div>
+    </div>
+    <div class="lg:col-span-2 flex items-center bg-white">
+      <div class="px-8 py-12 lg:px-14 lg:py-16 max-w-lg">
+        <div class="inline-flex items-center gap-2 bg-purple-light text-purple text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6" style="font-family: 'Poppins', sans-serif;">
+          Community Interest Company
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-semibold text-charcoal mb-5 leading-tight" style="font-family: 'Poppins', sans-serif;">
+          Finding a home when it matters most
+        </h1>
+        <p class="body-text mb-8">
+          We help people who have been through the asylum system, and have now been given the right to make their life here, find stable housing and begin to settle in.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/how-it-works" class="btn-primary">How we work</a>
+          <a href="/contact" class="btn-secondary">Get in touch</a>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- The gap -->
+  <section class="bg-warm-cream py-20 lg:py-28">
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+        <div>
+          <span class="section-label">The situation</span>
+          <h2 class="section-heading mb-6">A moment that is harder than it looks</h2>
+        </div>
+        <div class="space-y-5 body-text">
+          <p>
+            When someone's asylum case is decided in their favour, it should feel like a turning point. And it is. But it also comes with a deadline. Most people have around 28 days to leave their asylum accommodation, find somewhere to live, apply for Universal Credit, open a bank account, register with a GP, and begin navigating a housing system that is genuinely difficult even for people who have been through it before.
+          </p>
+          <p>
+            Many people fall into homelessness during this period, or end up in housing that is unsuitable, because there is very little structured support for exactly this gap. There are organisations doing important work at the early stages of the asylum process. Very few focus on what comes after a positive decision, when someone finally has the right to be here and almost no runway to act on it.
+          </p>
+          <p class="font-medium text-charcoal">
+            That is the moment we try to help with.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Birmingham skyline break -->
+  <div class="w-full overflow-hidden" style="height: clamp(220px, 28vw, 380px)">
+    <img
+      src="/images/view-1.jpg"
+      alt="View across residential neighbourhoods towards the city centre skyline"
+      class="w-full h-full object-cover object-center"
+    />
+  </div>
+
+  <!-- How we help -->
+  <section class="bg-white py-20 lg:py-28">
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="order-2 lg:order-1">
+          <span class="section-label">What we do</span>
+          <h2 class="section-heading mb-6">How we help</h2>
+          <div class="space-y-4 body-text mb-8">
+            <p>
+              We work with managing agents we know to find suitable housing for the people referred to us. We try to make sure any property we recommend is in decent condition and properly managed, and we think about fit — not just whether a room is available, but whether it suits the person moving in.
+            </p>
+            <p>
+              We help with the practical side of moving: the tenancy agreement, the housing benefit application, the council tax exemption. Once someone is settled, we stay in touch for the first few months. A check-in in week one, week four, week twelve. Enough to catch small problems before they become larger ones.
+            </p>
+          </div>
+          <a href="/how-it-works" class="btn-primary">See how it works</a>
+        </div>
+        <div class="order-1 lg:order-2 relative overflow-hidden rounded-2xl shadow-lg" style="aspect-ratio: 4/3">
+          <img
+            src="/images/housing-interior.webp"
+            alt="A well-maintained room in supported accommodation"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What good support makes possible -->
+  <section class="bg-purple-xlight py-20 lg:py-24">
+    <div class="section-container">
+      <div class="mb-12">
+        <span class="section-label">What we have seen</span>
+        <h2 class="section-heading max-w-xl">What the right support at the right time can do</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            heading: 'A stable start',
+            body: 'A fixed address means Universal Credit can be claimed, a bank account opened, and a GP registration made. These things are impossible without one.',
+          },
+          {
+            heading: 'Problems caught early',
+            body: 'Regular check-ins in the first few months mean issues get addressed before they spiral. A stalled benefit claim or a repair that has not happened is easier to fix at week two than month six.',
+          },
+          {
+            heading: 'Less isolation',
+            body: 'Knowing where to go — the nearest food bank, the local mosque, a GP surgery that is taking patients — makes an unfamiliar area feel less overwhelming.',
+          },
+          {
+            heading: 'A foundation to build from',
+            body: 'With housing stable and the basics in place, people have the space to think about what comes next: work, training, community, putting down roots.',
+          },
+        ].map((item) => (
+          <div class="bg-white rounded-2xl p-7 border-t-4 border-purple shadow-sm">
+            <h3 class="text-base font-semibold text-charcoal mb-3" style="font-family: 'Poppins', sans-serif;">{item.heading}</h3>
+            <p class="text-sm leading-relaxed text-charcoal-light">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Referral partners CTA -->
+  <section class="bg-slate py-20 lg:py-24">
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-white/60 font-semibold text-xs uppercase tracking-widest mb-3 block" style="font-family: 'Poppins', sans-serif;">Referral partners</span>
+          <h2 class="text-white font-semibold text-3xl sm:text-4xl mb-5 leading-tight" style="font-family: 'Poppins', sans-serif;">
+            Working with someone who needs housing?
+          </h2>
+          <p class="text-white/80 text-lg leading-relaxed">
+            We work through referral partners — charities and refugee organisations. If you are supporting someone through this transition and they need help finding stable housing, we would like to hear from you.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row lg:flex-col gap-4 lg:items-start">
+          <a href="/contact" class="btn-outline-white text-base">Get in touch</a>
+          <a href="/how-it-works" class="text-white/70 hover:text-white text-sm font-medium transition-colors underline underline-offset-4 self-center sm:self-auto lg:self-auto pt-1" style="font-family: 'Poppins', sans-serif;">
+            How referrals work
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>

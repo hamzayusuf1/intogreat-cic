@@ -1,70 +1,97 @@
 @import "tailwindcss";
 
 @theme {
-  --color-charcoal: #333333;
-  --color-charcoal-light: #4a4a4a;
+  /* Brand primaries */
+  --color-purple: #7B8FDB;
+  --color-purple-dark: #5A71C4;
+  --color-purple-light: #EEF1FB;
+  --color-purple-xlight: #F5F7FD;
+
+  --color-slate: #4E7BAB;
+  --color-slate-dark: #3A5F87;
+  --color-slate-light: #E8F0F7;
+
+  /* Legacy aliases so refer.astro keeps working */
   --color-periwinkle: #7B8FDB;
   --color-periwinkle-dark: #5A71C4;
   --color-periwinkle-light: #EEF1FB;
-  --color-warm-white: #FDFCFB;
-  --color-warm-cream: #F7F4F0;
-  --color-muted: #666666;
 
-  --font-montserrat: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
-  --font-inter: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  /* Neutrals */
+  --color-charcoal: #1A1A2E;
+  --color-charcoal-light: #4B5563;
+  --color-muted: #6B7280;
+  --color-warm-cream: #F8F7F4;
+  --color-warm-white: #FDFCFB;
+  --color-border: #E5E7EB;
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   body {
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    color: #333333;
+    color: #1A1A2E;
     background-color: #FDFCFB;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-periwinkle text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-periwinkle-dark transition-colors duration-200 shadow-sm;
+    @apply inline-flex items-center justify-center gap-2 bg-purple text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-purple-dark transition-colors duration-200 shadow-sm;
+    font-family: 'Poppins', sans-serif;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 text-charcoal font-semibold px-7 py-3.5 rounded-xl border-2 border-charcoal/20 hover:border-periwinkle hover:text-periwinkle transition-colors duration-200;
+    @apply inline-flex items-center justify-center gap-2 bg-white text-purple font-semibold px-7 py-3.5 rounded-lg border border-purple/30 hover:border-purple hover:bg-purple-xlight transition-colors duration-200;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center gap-2 text-white font-semibold px-7 py-3.5 rounded-lg border border-white/50 hover:bg-white/15 transition-colors duration-200;
+    font-family: 'Poppins', sans-serif;
   }
 
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-5 sm:px-8 lg:px-12;
+  }
+
+  .section-label {
+    @apply text-purple font-semibold text-xs uppercase tracking-[0.12em] mb-3 block;
+    font-family: 'Poppins', sans-serif;
   }
 
   .section-heading {
-    @apply font-bold text-3xl sm:text-4xl text-charcoal;
-    font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    @apply font-semibold text-3xl sm:text-4xl text-charcoal leading-tight;
+  }
+
+  .body-text {
+    @apply text-[1.0625rem] leading-relaxed text-charcoal-light;
   }
 
   .form-label {
-    @apply block text-sm font-semibold text-charcoal mb-2;
+    @apply block text-sm font-medium text-charcoal mb-2;
+    font-family: 'Poppins', sans-serif;
   }
 
   .form-input {
-    @apply w-full px-4 py-3 border border-gray-200 rounded-xl text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-periwinkle/30 focus:border-periwinkle transition-colors duration-200 bg-white;
+    @apply w-full px-4 py-3 border border-border rounded-lg text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple/20 focus:border-purple transition-colors duration-200 bg-white text-sm;
   }
 
   .form-select {
-    @apply w-full px-4 py-3 border border-gray-200 rounded-xl text-charcoal focus:outline-none focus:ring-2 focus:ring-periwinkle/30 focus:border-periwinkle transition-colors duration-200 bg-white cursor-pointer;
+    @apply w-full px-4 py-3 border border-border rounded-lg text-charcoal focus:outline-none focus:ring-2 focus:ring-purple/20 focus:border-purple transition-colors duration-200 bg-white cursor-pointer text-sm;
   }
 
   .form-textarea {
-    @apply w-full px-4 py-3 border border-gray-200 rounded-xl text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-periwinkle/30 focus:border-periwinkle transition-colors duration-200 bg-white resize-none;
+    @apply w-full px-4 py-3 border border-border rounded-lg text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple/20 focus:border-purple transition-colors duration-200 bg-white resize-none text-sm;
   }
 }

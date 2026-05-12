@@ -3,40 +3,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Contact Us"
-  description="Get in touch with Intogreat Housing CIC in Birmingham. We work with charities, social workers, local authority teams, and housing providers."
+  title="Contact"
+  description="Get in touch with us in Birmingham. For referrals, partnerships, or general enquiries."
 >
 
   <!-- Page hero -->
-  <section class="bg-warm-cream py-14 lg:py-16">
+  <section class="bg-gradient-to-br from-purple-xlight via-white to-slate-light py-20 lg:py-28">
     <div class="section-container">
       <div class="max-w-2xl">
-        <p class="text-periwinkle font-semibold text-sm uppercase tracking-widest mb-3">Contact</p>
-        <h1 class="font-bold text-4xl sm:text-5xl text-charcoal leading-tight mb-5" style="font-family: 'Montserrat', sans-serif;">
-          Get in Touch
+        <span class="section-label">Contact</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-charcoal leading-tight mb-6" style="font-family: 'Poppins', sans-serif;">
+          Get in touch
         </h1>
-        <p class="text-muted text-xl leading-relaxed">
-          Whether you have a referral to make, a question, or you'd like to talk about working with us, we'd love to hear from you.
+        <p class="text-xl leading-relaxed text-charcoal-light">
+          Email is the best first point of contact. We aim to come back to you the same day or by the next working day.
         </p>
       </div>
     </div>
   </section>
 
   <!-- Contact section -->
-  <section class="bg-white py-14 lg:py-20">
+  <section class="bg-white py-16 lg:py-24">
     <div class="section-container">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
 
-        <!-- Contact form -->
+        <!-- Form -->
         <div class="lg:col-span-2">
-          <h2 class="font-bold text-2xl text-charcoal mb-8" style="font-family: 'Montserrat', sans-serif;">Send us a message</h2>
+          <div class="mb-10 pb-10 border-b border-gray-100">
+            <p class="body-text">
+              If you are making a referral, email us with what you have and we will follow up with questions. If you are enquiring about working with us, the same address reaches the right person.
+            </p>
+          </div>
 
           <form
             id="contact-form"
             action="https://formspree.io/f/mnjwqjze"
             method="POST"
           >
-            <input type="hidden" name="_subject" value="New message — Intogreat Housing CIC website" />
+            <input type="hidden" name="_subject" value="New message — Intogreat CIC website" />
             <input type="hidden" name="_replyto" id="contact-reply-to" value="" />
 
             <div class="space-y-5">
@@ -46,7 +50,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   <input id="contact-name" name="name" type="text" required placeholder="Full name" class="form-input" />
                 </div>
                 <div>
-                  <label for="contact-org" class="form-label">Organisation <span class="text-muted font-normal">(optional)</span></label>
+                  <label for="contact-org" class="form-label">Organisation <span class="text-muted font-normal text-xs">(optional)</span></label>
                   <input id="contact-org" name="organisation" type="text" placeholder="Your charity or organisation" class="form-input" />
                 </div>
               </div>
@@ -57,8 +61,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   <input id="contact-email" name="email" type="email" required placeholder="your@email.com" class="form-input" />
                 </div>
                 <div>
-                  <label for="contact-phone" class="form-label">Phone number <span class="text-muted font-normal">(optional)</span></label>
-                  <input id="contact-phone" name="phone" type="tel" placeholder="e.g. 07700 000000" class="form-input" />
+                  <label for="contact-phone" class="form-label">Phone number <span class="text-muted font-normal text-xs">(optional)</span></label>
+                  <input id="contact-phone" name="phone" type="tel" placeholder="e.g. 07700 000 000" class="form-input" />
                 </div>
               </div>
 
@@ -67,92 +71,65 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <textarea id="contact-message" name="message" rows="6" required placeholder="How can we help?" class="form-textarea"></textarea>
               </div>
 
-              <div id="contact-error" class="hidden p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
+              <div id="contact-error" class="hidden p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
                 Something went wrong. Please try again or call us directly.
               </div>
-              <div id="contact-success" class="hidden p-6 bg-green-50 border border-green-200 rounded-xl text-center">
-                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-600" viewBox="0 0 20 20" fill="currentColor">
+              <div id="contact-success" class="hidden p-8 bg-purple-xlight border border-purple/20 rounded-xl text-center">
+                <div class="w-12 h-12 bg-purple/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                   </svg>
                 </div>
-                <p class="font-bold text-green-800 mb-1">Message sent — thank you.</p>
-                <p class="text-green-700 text-sm">We'll be in touch shortly.</p>
+                <p class="font-semibold text-charcoal mb-1" style="font-family: 'Poppins', sans-serif;">Message sent — thank you.</p>
+                <p class="text-charcoal-light text-sm">We will be in touch shortly.</p>
               </div>
 
               <button type="submit" id="contact-submit" class="btn-primary text-base py-4 px-8">
-                Send Message
+                Send message
               </button>
             </div>
           </form>
         </div>
 
         <!-- Contact details sidebar -->
-        <div class="space-y-6">
-          <div>
-            <h3 class="font-bold text-charcoal mb-5" style="font-family: 'Montserrat', sans-serif;">Contact details</h3>
-            <ul class="space-y-4">
+        <div class="space-y-8">
+          <div class="bg-warm-cream rounded-2xl p-8">
+            <h3 class="text-base font-semibold text-charcoal mb-6" style="font-family: 'Poppins', sans-serif;">Contact details</h3>
+            <ul class="space-y-6">
               <li>
-                <a href="tel:+447507112497" class="flex items-start gap-3 group">
-                  <div class="w-10 h-10 bg-periwinkle-light rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-periwinkle" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="text-xs text-muted uppercase tracking-wider mb-0.5">Phone</p>
-                    <p class="text-charcoal font-medium group-hover:text-periwinkle transition-colors">07507 112 497</p>
-                  </div>
+                <p class="text-xs font-semibold text-muted uppercase tracking-wider mb-1.5" style="font-family: 'Poppins', sans-serif;">Phone</p>
+                <a href="tel:+447507112497" class="text-charcoal font-medium hover:text-purple transition-colors text-base" style="font-family: 'Poppins', sans-serif;">
+                  07507 112 497
                 </a>
               </li>
               <li>
-                <a href="mailto:info@intogreathousing.co.uk" class="flex items-start gap-3 group">
-                  <div class="w-10 h-10 bg-periwinkle-light rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-periwinkle" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="text-xs text-muted uppercase tracking-wider mb-0.5">Email</p>
-                    <p class="text-charcoal font-medium group-hover:text-periwinkle transition-colors">info@intogreathousing.co.uk</p>
-                  </div>
+                <p class="text-xs font-semibold text-muted uppercase tracking-wider mb-1.5" style="font-family: 'Poppins', sans-serif;">Email</p>
+                <a href="mailto:info@intogreathousing.co.uk" class="text-charcoal font-medium hover:text-purple transition-colors text-sm break-all" style="font-family: 'Poppins', sans-serif;">
+                  info@intogreathousing.co.uk
                 </a>
               </li>
-              <li class="flex items-start gap-3">
-                <div class="w-10 h-10 bg-periwinkle-light rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-periwinkle" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <div>
-                  <p class="text-xs text-muted uppercase tracking-wider mb-0.5">Location</p>
-                  <p class="text-charcoal font-medium">Birmingham, West Midlands</p>
-                </div>
+              <li>
+                <p class="text-xs font-semibold text-muted uppercase tracking-wider mb-1.5" style="font-family: 'Poppins', sans-serif;">Location</p>
+                <p class="text-charcoal font-medium text-sm" style="font-family: 'Poppins', sans-serif;">Birmingham, West Midlands</p>
               </li>
             </ul>
           </div>
 
-          <!-- Quick links -->
-          <div class="bg-warm-cream rounded-2xl p-6 space-y-3">
-            <h3 class="font-bold text-charcoal text-sm mb-4" style="font-family: 'Montserrat', sans-serif;">Quick links</h3>
-            <a href="/refer" class="flex items-center justify-between group p-3 bg-white rounded-xl hover:border-periwinkle border border-gray-100 transition-colors duration-200">
-              <span class="text-sm font-medium text-charcoal group-hover:text-periwinkle transition-colors">Make a referral</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-muted group-hover:text-periwinkle transition-colors" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </a>
-            <a href="/how-it-works#housing-providers" class="flex items-center justify-between group p-3 bg-white rounded-xl hover:border-periwinkle border border-gray-100 transition-colors duration-200">
-              <span class="text-sm font-medium text-charcoal group-hover:text-periwinkle transition-colors">Partner with us as a housing provider</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-muted group-hover:text-periwinkle transition-colors flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </a>
+          <div class="bg-purple-xlight border border-purple/15 rounded-2xl p-6">
+            <p class="text-sm leading-relaxed text-charcoal-light">
+              For referrals, email us directly with what you have. For partnerships or general enquiries, the same address reaches the right person.
+            </p>
           </div>
+
+          <a href="/refer" class="btn-primary w-full text-center text-sm">
+            Make a formal referral
+          </a>
         </div>
+
       </div>
     </div>
   </section>
+
 </BaseLayout>
 
 <script>
@@ -188,12 +165,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       } else {
         errorDiv?.classList.remove('hidden');
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
+        submitBtn.textContent = 'Send message';
       }
     } catch {
       errorDiv?.classList.remove('hidden');
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Message';
+      submitBtn.textContent = 'Send message';
     }
   });
 </script>

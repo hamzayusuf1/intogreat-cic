@@ -2,56 +2,51 @@
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
-  { href: '/how-it-works', label: 'How It Works' },
+  { href: '/how-it-works', label: 'How We Work' },
   { href: '/contact', label: 'Contact' },
 ];
 
 const pathname = Astro.url.pathname;
+const isHome = pathname === '/';
 ---
 
 <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
   <div class="section-container">
-    <div class="flex items-center justify-between h-18 py-4">
+    <div class="flex items-center justify-between h-20">
 
-      <!-- Logo -->
-      <a href="/" class="flex items-center gap-3 flex-shrink-0" aria-label="Intogreat Housing CIC — Home">
+      <a href="/" class="flex-shrink-0" aria-label="Intogreat CIC — Home">
         <img
           src="/logo-nav.png"
-          alt="Intogreat Housing CIC"
-          class="h-10 w-auto"
+          alt="Intogreat CIC"
+          class="h-14 w-auto"
         />
       </a>
 
-      <!-- Desktop nav -->
-      <nav class="hidden lg:flex items-center gap-8" aria-label="Main navigation">
+      <nav class="hidden lg:flex items-center gap-7" aria-label="Main navigation">
         {navLinks.map(({ href, label }) => (
           <a
             href={href}
-            class={`text-sm font-medium transition-colors duration-200 ${
+            class={`text-sm font-medium transition-colors duration-200 pb-0.5 border-b-2 ${
               pathname === href
-                ? 'text-periwinkle'
-                : 'text-charcoal hover:text-periwinkle'
+                ? 'text-purple border-purple'
+                : 'text-charcoal-light border-transparent hover:text-purple hover:border-purple/40'
             }`}
+            style="font-family: 'Poppins', sans-serif;"
           >
             {label}
           </a>
         ))}
       </nav>
 
-      <!-- Desktop CTA -->
       <div class="hidden lg:block">
         <a href="/refer" class="btn-primary text-sm">
           Make a Referral
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
         </a>
       </div>
 
-      <!-- Mobile hamburger -->
       <button
         id="mobile-menu-btn"
-        class="lg:hidden p-2 text-charcoal hover:text-periwinkle transition-colors"
+        class="lg:hidden p-2 text-charcoal-light hover:text-purple transition-colors"
         aria-label="Toggle menu"
         aria-expanded="false"
       >
@@ -65,22 +60,22 @@ const pathname = Astro.url.pathname;
     </div>
   </div>
 
-  <!-- Mobile menu -->
   <div id="mobile-menu" class="lg:hidden hidden border-t border-gray-100 bg-white">
-    <nav class="section-container py-4 flex flex-col gap-1" aria-label="Mobile navigation">
+    <nav class="section-container py-5 flex flex-col gap-1" aria-label="Mobile navigation">
       {navLinks.map(({ href, label }) => (
         <a
           href={href}
           class={`px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200 ${
             pathname === href
-              ? 'bg-periwinkle-light text-periwinkle'
-              : 'text-charcoal hover:bg-warm-cream'
+              ? 'bg-purple-light text-purple'
+              : 'text-charcoal-light hover:bg-warm-cream'
           }`}
+          style="font-family: 'Poppins', sans-serif;"
         >
           {label}
         </a>
       ))}
-      <a href="/refer" class="mt-3 btn-primary text-base w-full text-center">
+      <a href="/refer" class="mt-3 btn-primary text-sm w-full text-center">
         Make a Referral
       </a>
     </nav>
